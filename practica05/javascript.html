@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function cambiarColor(color) {
+            console.log("Color recibido: ", color);
+            var e = document.getElementById("titulo1");
+            e.style.color = color;
+        }
+
+        function cambiarColorH(color) {
+            var c = document.getElementsByTagName("h1")
+
+            /*for (let i = 0; i < c.length; i++) {
+                c[i].style.color = color;
+                
+            }*/
+
+            /*var arr = [].slice.call(c);
+            arr.forEach(element => {console.log(element)
+                element.style.color = color;
+            });*/
+            
+            /*for (const p in c) {
+                c[p].style.color = color;
+            }*/
+
+            for (const x in c) {
+                if (Object.hasOwnProperty.call(c, x)) {
+                    c[x].style.color = color
+                    
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 id="titulo1">Esto es un titulo 1</h1>
+    <h1 id="titulo2">Esto es un titulo 2</h1>
+    <h1 id="titulo3">Esto es un titulo 3</h1>
+    <h1 id="titulo4">Esto es un titulo 4</h1>
+    <h1 id="titulo5">Esto es un titulo 5</h1>
+    
+    <button onClick="cambiarColorH('red')">Rojo</button>
+    <button onClick="cambiarColorH('blue')">Azul</button>
+</body>
+</html>
